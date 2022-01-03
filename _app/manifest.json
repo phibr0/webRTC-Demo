@@ -1,0 +1,91 @@
+{
+  ".svelte-kit/build/runtime/internal/start.js": {
+    "file": "start-06ff4db7.js",
+    "src": ".svelte-kit/build/runtime/internal/start.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-efad3a29.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/build/components/layout.svelte",
+      ".svelte-kit/build/components/error.svelte",
+      "src/routes/index.svelte",
+      "src/routes/answer.svelte",
+      "src/routes/offer.svelte"
+    ],
+    "css": [
+      "assets/start-61d1577b.css"
+    ]
+  },
+  ".svelte-kit/build/components/layout.svelte": {
+    "file": "layout.svelte-f5c3904a.js",
+    "src": ".svelte-kit/build/components/layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-efad3a29.js"
+    ]
+  },
+  ".svelte-kit/build/components/error.svelte": {
+    "file": "error.svelte-7e722ae8.js",
+    "src": ".svelte-kit/build/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-efad3a29.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-5ad63fd6.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-efad3a29.js"
+    ],
+    "css": [
+      "assets/pages/index.svelte-7e82833d.css",
+      "assets/chat.svelte_svelte_type_style_lang-ec7614e1.css"
+    ]
+  },
+  "src/routes/answer.svelte": {
+    "file": "pages/answer.svelte-5d4219c1.js",
+    "src": "src/routes/answer.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-efad3a29.js",
+      "_scanner-557f655c.js"
+    ],
+    "css": [
+      "assets/pages/answer.svelte-e1939f82.css",
+      "assets/chat.svelte_svelte_type_style_lang-ec7614e1.css"
+    ]
+  },
+  "src/routes/offer.svelte": {
+    "file": "pages/offer.svelte-48f6dfb9.js",
+    "src": "src/routes/offer.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-efad3a29.js",
+      "_scanner-557f655c.js"
+    ],
+    "css": [
+      "assets/pages/offer.svelte-8e1639d8.css",
+      "assets/chat.svelte_svelte_type_style_lang-ec7614e1.css"
+    ]
+  },
+  "_vendor-efad3a29.js": {
+    "file": "chunks/vendor-efad3a29.js"
+  },
+  "_scanner-557f655c.js": {
+    "file": "chunks/scanner-557f655c.js",
+    "imports": [
+      "_vendor-efad3a29.js"
+    ],
+    "css": [
+      "assets/chat.svelte_svelte_type_style_lang-ec7614e1.css"
+    ]
+  }
+}
