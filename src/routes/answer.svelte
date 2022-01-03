@@ -1,14 +1,16 @@
 <script lang="ts">
   import QRCode from "qrcode";
-import Chat from "../components/chat.svelte";
+  import Chat from "../components/chat.svelte";
   import { onMount } from "svelte";
   import Scanner from "../components/scanner.svelte";
+  import type { AppState } from "src/types";
   let channel: RTCDataChannel;
   let canvas: HTMLCanvasElement;
-  let connected = false;
+  let applicationState: AppState = "scanning";
 
   onMount(() => {
     addEventListener("scan", async (event: CustomEvent) => {
+      applicationState = "offering";
       const offer: any = event.detail.sdp;
 
       const iceConfiguration: any = {};
@@ -34,7 +36,10 @@ import Chat from "../components/chat.svelte";
         const receiveChannel = e.channel;
         receiveChannel.onmessage = (e) =>
           console.log("Message received: " + e.data);
-        receiveChannel.onopen = (e) => {console.log("Connection opened."); connected = true;};
+        receiveChannel.onopen = (e) => {
+          console.log("Connection opened.");
+          applicationState = "chatting";
+        };
         receiveChannel.onclose = (e) => console.log("Connection closed.");
         channel = receiveChannel;
       };
@@ -53,12 +58,30 @@ import Chat from "../components/chat.svelte";
 </script>
 
 <main>
-  <Scanner />
-  <canvas bind:this={canvas} />
-  {#if connected}
-    <Chat channel={channel}/>
+  {#if applicationState === "scanning"}
+    <Scanner />
+  {:else if applicationState === "offering"}
+    <p>Let the other User scan this Code</p>
+    <canvas bind:this={canvas} />
+  {:else if applicationState === "chatting"}
+    <Chat {channel} />
   {/if}
 </main>
 
 <style>
+  canvas {
+    max-width: 100vw;
+    aspect-ratio: 1;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    padding: 1rem;
+  }
+
+  p {
+    color: whitesmoke;
+  }
 </style>
