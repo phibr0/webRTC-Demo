@@ -15,16 +15,14 @@
       .then((stream) => {
         video.srcObject = stream;
         let qr = new QrcodeDecoder();
-        qr.decodeFromVideo(video).then((res) => {
+        qr.decodeFromVideo(video).then((res: { data: string; }) => {
           dispatchEvent(
-            new CustomEvent("scan", { detail: { sdp: JSON.parse(res.data) } })
+            new CustomEvent("scan", { detail: { data: res.data } })
           );
-          console.log(JSON.parse(res.data));
         });
       })
       .catch((error) => {
         console.error(error);
-        alert(error);
       });
   });
 </script>

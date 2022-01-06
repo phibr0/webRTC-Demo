@@ -11,12 +11,15 @@ const config = {
 		adapter: adapter({
 			pages: 'build',  // path to public directory
 			assets: 'build',  // path to public directory
-			fallback: null
+			fallback: null,
 		}),
 
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
-	}
+		target: '#svelte',
+		paths: {
+			//base: '/webRTC-Demo',
+		},
+	},
 };
 
 export default config;

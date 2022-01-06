@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { Message } from './../types.ts';
   import type { Message } from "./../types";
   import { onMount } from "svelte";
 
   export let channel: RTCDataChannel;
   let messages: Message[] = [];
-  let textField: string = "";
+  let textField = "";
 
   onMount(
     () =>
@@ -17,6 +16,7 @@
     if (textField) {
       messages = [...messages, { type: "outgoing", data: textField }];
       channel.send(textField);
+      textField = "";
     }
   }
 </script>
