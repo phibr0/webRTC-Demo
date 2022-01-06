@@ -1,0 +1,12 @@
+{
+  "name": "peersh-core",
+  "version": "0.0.1",
+  "description": "",
+  "main": "rtcController.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "phibr0",
+  "license": "MIT"
+}

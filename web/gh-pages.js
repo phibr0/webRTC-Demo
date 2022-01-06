@@ -1,7 +1,7 @@
 import { publish } from 'gh-pages';
 
 publish(
-  'build', // path to public directory
+  'web/build', // path to public directory
   {
     branch: 'gh-pages',
     repo: 'https://github.com/phibr0/webRTC-Demo', // Update to point to your repository

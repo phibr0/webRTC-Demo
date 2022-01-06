@@ -14,11 +14,11 @@ export default class RTCController {
 
         if(connectionType === 'offer') {
             this.channel = this.localConnection.createDataChannel("channel");
-            this.setupMethods();
+            this.setupChannel();
         } else {
             this.localConnection.ondatachannel = (event) => {
                 this.channel = event.channel;
-                this.setupMethods();
+                this.setupChannel();
             };
         }
 
@@ -27,7 +27,7 @@ export default class RTCController {
         };
     }
 
-    private setupMethods(): void {
+    private setupChannel(): void {
           this.channel.onmessage = (event) => {
             this.onMessage?.(event.data);
             this.log('Received message.')
